@@ -98,10 +98,15 @@ body {
     border: 1px solid black;
     box-sizing: border-box;
     cursor: pointer;
+    
 }
   
 @media screen and (max-width: 650px) {
     .container {
       transform: scale(0.7);
     }
+}
+
+.color-activo{
+    background-color: orange;
 }
