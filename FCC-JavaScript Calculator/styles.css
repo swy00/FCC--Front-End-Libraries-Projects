@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Secular+One');
+*{
+    background-color: bisque;
+    font-family: Secular One,sans-serif;
+}
+.body{
+    height: 100vh;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.grid{
+    display: grid;
+    border: 3px solid black;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+    "dis dis dis dis"
+    "AC AC div mult"
+    "siete ocho nueve menos"
+    "cuatro cinco seis mas"
+    "uno dos tres igual"
+    "cero cero punto igual" ;
+}
+.dis{
+    grid-area: dis;
+    background-color: darkgray;
+    text-align: right;
+    font-size: 20px;
+}
+.dis input{
+    width: 100%;
+    background-color: darkgray;
+    text-align: right;
+    padding: 5px 15px;
+    border: none;
+}
+
+.padButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color:white;
+    padding: 20px 40px;
+    background-color: gray;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.total{
+    padding: 5px 20px;
+    background-color: darkgray;
+    font-size: 22px;
+    color:teal;
+}
+.gris-oscuro{
+    background-color: rgb(66, 64, 64);
+}
+.rojo{
+    background-color: rgba(213, 10, 10, 0.808);
+}
+
+.azul{
+    background-color: rgb(18, 18, 149);
+}
+
+
+.padButton:hover{
+    border: 1px solid #ccc;
+    color:black;
+}
+
+.igual{
+    grid-area: igual;
+}
+.AC{
+    grid-area: AC;
+}
+.cero{
+    grid-area: cero;
+}
