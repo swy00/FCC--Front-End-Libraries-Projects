@@ -132,15 +132,10 @@ const soundsGroup = {
 
 const keyActiveStyle = {
   backgroundColor: 'orange',
-  boxShadow: '0 3px orange',
-  height: 77,
-  marginTop: 13
 };
 
 const keyInactiveStyle = {
   backgroundColor: 'grey',
-  marginTop: 10,
-  boxShadow: '3px 3px 5px black'
 };
 
 function App(){
@@ -181,9 +176,9 @@ function App(){
 
   return(
       <div id="drum-machine" className="container">
-          <div className="pad-bank">
+          <div className="pad-bank" >
             {sounds.map((clip)=>(
-              <DrumPad key={clip.id} clip={clip} volume={volume} />
+              <DrumPad key={clip.id} clip={clip} volume={volume} setSoundName={setSoundName} />
             ))}
           </div>
           <div className="logo">
@@ -214,9 +209,9 @@ function App(){
 }
 
 
-function DrumPad({clip,volume}){
+function DrumPad({clip,volume,setSoundName}){
   //Cambiar el color al apretar
-  const [active,setActive]=React.useState(false)
+  const [activeStyle,setActiveStyle]=React.useState(keyInactiveStyle)
 
  
   //Reproducir Sonidos
@@ -224,12 +219,11 @@ function DrumPad({clip,volume}){
     const wichAudio = document.getElementById(clip.keyTrigger)
     wichAudio.currentTime = 0;
     wichAudio.play()
-
     
     //Para controlar el color de los botones al apretarlos
-    setActive(true)
-    setTimeout(()=>setActive(false),200)
-    
+    setActiveStyle(keyActiveStyle)
+    setTimeout(()=>setActiveStyle(keyInactiveStyle),200)
+    setSoundName(clip.id)
     //Controlar Volumen
     wichAudio.volume=volume;
   }
@@ -248,12 +242,11 @@ function DrumPad({clip,volume}){
   const keyPress =(event)=>{
     if( event.keyCode == clip.keyCode ){
       playSound();
-      setKey();
     }
   }
   
   return(
-    <div className='drum-pad' onClick={playSound} id={clip.id} >
+    <div className='drum-pad' onClick={playSound} id={clip.id} style={activeStyle}>
       <audio className="clip" id={clip.keyTrigger} src={clip.url} />
       {clip.keyTrigger}
     </div>
