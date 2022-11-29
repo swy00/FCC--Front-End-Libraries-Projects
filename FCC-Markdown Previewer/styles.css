@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Secular+One');
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    font-family: Secular One,sans-serif;
+}
+
+body {
+    background-color: #1f2050;
+    color:white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.textarea{
+    width: 100%;
+    font-size: 15px;
+    padding: 20px;
+    border-radius:20px 0px ;
+    outline: none;
+    text-align: left;
+    background-color: darkgrey;
+    height: 50vh;
+}
+
+.textarea:focus{
+    box-shadow: 1px 1px 5px 5px rgba(128, 128, 128, 0.602);
+}
+
+#preview{
+    padding: 35px;
+    text-align: left;
+    background-color: darkgrey;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.304);
+    box-shadow: 1px 1px 5px 5px rgba(128, 128, 128, 0.402);
+    border-radius: 0px 20px;
+    overflow: hidden;
+}
+
+#preview code{
+    background-color: white;
+    border-radius: 4px;
+    padding: 5px 0px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#preview pre{
+    padding: 10px;
+    display: block;
+    overflow: auto;
+    background: white;
+    padding: 5px;
+    line-height: 1.2;
+}
+#preview table{
+    border-color: black;
+}
+#preview img{
+    width: 90%;
+    display: block;
+    margin: 2rem auto;
+}
+
+#preview a{
+    text-decoration: none;
+}
+.input{
+    text-align: center;
+    padding: 0px 4px 0px 4px;
+}
+.h1{
+    padding: 4px;
+}
+
+.h3{
+    margin-top: 3px;
+}
+
+
+@media screen and (max-width: 420px) {
+    body {
+      font-size: 0.875rem;
+    }
+}
+
+.container{
+    padding: 30px;
+}
